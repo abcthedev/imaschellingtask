@@ -1,13 +1,13 @@
-import React from 'react';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import './App.css';
 import Signup from './organisms/Signup/Signup';
+import Table from './organisms/Table/Table';
 
 function App() {
   return (
     <div className="App">
       <Signup />
+      <Table />
     </div>
   );
 }

@@ -14,7 +14,7 @@ const LabeledInput: React.FC<IProps> = ({ id, label, type, value, onChange }) =>
     return (
         <div className="mb-3">
             <Label htmlFor={id} label={label} />
-            <InputField id={id} type={type} value={value} onChange={onChange} />
+            <InputField id={id} type={type} value={value} onChange={onChange} className="form-control" />
         </div>
     );
 };
