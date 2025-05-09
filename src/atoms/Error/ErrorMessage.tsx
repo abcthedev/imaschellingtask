@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-type Props = {}
-
-const ErrorMessage = (props: Props) => {
-    return (
-        <div>ErrorMessage</div>
-    )
+interface IProps {
+  message: string;
 }
 
-export default ErrorMessage
+const ErrorMessage: React.FC<IProps> = ({ message }) => (
+  <div className="invalid-feedback d-block">{message}</div>
+);
+
+export default ErrorMessage;

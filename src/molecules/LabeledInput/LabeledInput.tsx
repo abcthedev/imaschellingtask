@@ -1,11 +1,22 @@
-import React from 'react'
+import React from 'react';
+import Label from '../../atoms/Label/Label';
+import InputField from '../../atoms/InputField/InputField';
 
-type Props = {}
-
-const LabeledInput = (props: Props) => {
-  return (
-    <div>LabeledInput</div>
-  )
+interface IProps {
+    id: string;
+    label: string;
+    type: 'text' | 'password' | 'date' | 'email';
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default LabeledInput
+const LabeledInput: React.FC<IProps> = ({ id, label, type, value, onChange }) => {
+    return (
+        <div className="mb-3">
+            <Label htmlFor={id} label={label} />
+            <InputField id={id} type={type} value={value} onChange={onChange} />
+        </div>
+    );
+};
+
+export default LabeledInput;

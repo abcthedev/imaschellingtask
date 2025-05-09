@@ -1,11 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-type Props = {}
+interface IProps {
+    htmlFor: string;
+    label: string;
 
-const Label = (props: Props) => {
-  return (
-    <div>Label</div>
-  )
 }
 
-export default Label
+const Label: React.FC<IProps> = ({ htmlFor, label }) => {
+    return (
+        <label htmlFor={htmlFor} className="form-label">
+            {label}
+        </label>
+    );
+};
+
+export default Label;

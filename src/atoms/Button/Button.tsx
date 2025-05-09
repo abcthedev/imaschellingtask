@@ -1,11 +1,32 @@
-import React from 'react'
+import React from 'react';
 
-type Props = {}
+type ButtonVariant = 'primary' | 'secondary' | 'danger';
 
-const Button = (props: Props) => {
-    return (
-        <div>Button</div>
-    )
+interface IProps {
+    variant?: ButtonVariant;
+    label: string;
+    type?: 'button' | 'submit' | 'reset';
+    onClick?: () => void;
+    className?: string;
 }
 
-export default Button
+const Button: React.FC<IProps> = ({
+    variant = 'primary',
+    label,
+    type = 'button',
+    onClick,
+    className = '',
+}) => {
+    const variantClass = `btn btn-${variant}`;
+    return (
+        <button
+            type={type}
+            className={`${variantClass} ${className}`}
+            onClick={onClick}
+        >
+            {label}
+        </button>
+    );
+};
+
+export default Button;
